@@ -1,0 +1,16 @@
+.genreItems{
+    list-style-type: none;
+    text-decoration: none;  
+    display: flex;
+    width :50%;
+    justify-content:space-evenly;
+    align-Items: center;
+    font-size: 12px;
+    margin-left: 20%;
+    color:white
+}
+
+.genreBox{
+   display : flex;
+   align-items: center;
+}

@@ -1,0 +1,19 @@
+.logo{
+    font-family: Roboto;
+    font-style : Medium;
+    Font-size: 24px;
+    Line-height: 28px;
+    Line-height: 100%;
+    Vertical-align: Bottom;
+    Letter-spacing: 5%;
+}
+#x{
+    color: #EE1520;
+    margin-right: 4px;
+    font-size: 25px;
+    font-weight: bold;
+}
+#flix{
+    font-size: 25px;
+    font-weight: bold;
+}

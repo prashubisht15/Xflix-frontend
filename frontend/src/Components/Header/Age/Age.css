@@ -1,0 +1,11 @@
+.ageItems{
+    list-style-type: none;  
+    text-decoration: none;
+    display: flex;
+    width :55%;
+    justify-content:space-evenly;
+    align-Items: center;
+    font-size: 12px;
+    color:white;
+    margin-left: 18%
+}
