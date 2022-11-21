@@ -1,16 +1,14 @@
 import React from 'react'
-import { Grid } from '@mui/material'
+import Header from '../Header/Header'
+import Explore from '../Explore/Explore'
 
-const Dashboard = ( {allgenres,videoList}) => {
+const Dashboard = ({ allGenres, age, videoList, selectedGenres, handleGenreChange, handleContentChange, selectedContent }) => {
   return (
     <div>
-        <Grid container>
-            <GenreList allGenres={allGenres}/>
-        </Grid>
-        <Grid item xs={12}>
-            <Explore videoList={videoList}/>
-        </Grid>
-      
+      <Header allGenres={allGenres} age={age} videoList={videoList} handleGenreChange={handleGenreChange} handleContentChange={handleContentChange} selectedGenres={selectedGenres} selectedContent={selectedContent} />
+
+      <Explore videoList={videoList} />
+
     </div>
   )
 }

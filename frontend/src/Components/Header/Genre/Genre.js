@@ -1,41 +1,28 @@
 import React from 'react'
 import { Box} from '@mui/material'
-import { NavLink, BrowserRouter } from "react-router-dom";
 import Button from '@mui/material/Button';
 import './Genre.css'
-const btnArray = ['All Genre', 'Education', 'Sports', 'Music','lifestyle']
 
-function Genre() {
-    let activeStyle = {
-        color : "gray",
-        textDecoration: "None",
-        background : "white",
-        padding : "5px 8px 5px 8px",
-        borderRadius : "25px",
-        boxSizing : "border-box"
-      };
-
+function Genre({allGenres, selectedGenres, handleGenreChange}) {
+   
     return (
-        <BrowserRouter>
+    
             <Box className='genreBox'>
                 <ul className='genreItems'>
                     {
-                        btnArray.map((ele,idx) => <li key={idx}>
-                            <NavLink
-                                to="messages"
-                                style={({ isActive}) =>(
-                                isActive ? activeStyle : undefined
-
-                        )}
-                            >
-                                {ele}
-                            </NavLink></li>)
+                        allGenres.map((genre) => 
+                        <li key={genre.value}
+                        onClick={()=>handleGenreChange(genre)}
+                        className={selectedGenres.includes(genre.value)?"genreItemsActive":"genreItems"}    
+                        >
+                                {genre.label}
+                        </li>)
                     }
                 </ul>
-                <Button variant='contained'>Contained</Button>
+                <Button variant='contained' className='sort-btn'>Contained</Button>
             </Box>
-        </BrowserRouter>
     )
 }
 
 export default Genre
+ 

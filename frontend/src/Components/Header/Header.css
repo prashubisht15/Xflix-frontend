@@ -1,6 +1,6 @@
 .header{
     background: #302d2d;
-    height : 150px;
+    height : 160px;
 }
 #nav{
     display: flex;
@@ -8,4 +8,14 @@
     justify-content: space-between;
     color: white;
     padding : 10px 20px
+}
+.Grid-genre{
+    display: flex;
+    justify-content: space-evenly;
+    
+}
+.Grid-age{
+    display: flex;
+    justify-content: space-evenly;
+    
 }

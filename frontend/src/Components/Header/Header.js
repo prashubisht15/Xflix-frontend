@@ -4,9 +4,11 @@ import SearchBar from './SearchBar/SearchBar'
 import Upload from './Upload/Upload'
 import './Header.css'
 import { Box } from '@mui/material'
+import { Grid } from '@mui/material'
 import Genre from './Genre/Genre'
 import Age from './Age/Age'
-const Header = () => {
+
+const Header = ({allGenres,age,videoList,handleGenreChange,handleContentChange,selectedGenres,selectedContent}) => {
   return (
     <Box className="header">
         <Box id="nav">
@@ -14,10 +16,12 @@ const Header = () => {
             <SearchBar />
             <Upload />
         </Box>
-            <Genre/>
-            <Age/>
-        
-
+        <Grid container className="Grid-genre">
+            <Genre allGenres={allGenres} handleGenreChange={handleGenreChange} selectedGenres={selectedGenres}/>
+        </Grid >
+        <Grid container className="Grid-age">
+            <Age age={age} handleContentChange={handleContentChange} selectedContent={selectedContent}/>
+        </Grid>
     </Box>
   )
 }
