@@ -98,6 +98,7 @@ const Home = () => {
                 handleContentChange={handleContentChange}
                 selectedGenres={genres}
                 selectedContent={content}
+                refresh={performAPICall}
             />
         </div>
     )

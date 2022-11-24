@@ -8,13 +8,13 @@ import { Grid } from '@mui/material'
 import Genre from './Genre/Genre'
 import Age from './Age/Age'
 
-const Header = ({allGenres,age,videoList,handleGenreChange,handleContentChange,selectedGenres,selectedContent}) => {
+const Header = ({allGenres,age,videoList,handleGenreChange,handleContentChange,selectedGenres,selectedContent,refresh}) => {
   return (
     <Box className="header">
         <Box id="nav">
             <Logo />
             <SearchBar />
-            <Upload />
+            <Upload allGenres={allGenres} age={age}/>
         </Box>
         <Grid container className="Grid-genre">
             <Genre allGenres={allGenres} handleGenreChange={handleGenreChange} selectedGenres={selectedGenres}/>

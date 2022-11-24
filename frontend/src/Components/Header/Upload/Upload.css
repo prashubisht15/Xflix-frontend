@@ -1,6 +1,25 @@
-#upload button{
-    height:15px;
-    padding:14px;
+#upload{
+    height:30px;
+    padding:5px;
     font-size: 12px;
-    width: 114px;
+    width: 100px;
+}
+
+.form-element .MuiInputLabel-root,
+.form-element .MuiFormHelperText-root,
+.form-element input[type="date"]{
+    color :rgba(255,255,255,0.6);
+}
+.form-element input[type="text"],
+.form-element .MuiSelect-select{
+    color:rgba(255,255,255,0.87);
+}
+.form-element fieldset{
+    border-color:rgba(255,255,255,0.38);
+}
+#upload-btn-submit{
+    background-color: #ee1520;
+}
+.dialog{
+    background-color: dimgrey;
 }

@@ -1,6 +1,8 @@
 import React from 'react'
 import {Box} from '@mui/system'
 import { TextField } from '@mui/material'
+// import InputAdornment from '@material-ui/core/InputAdornment';
+// import { SearchOutlined } from '@material-ui/icons';
 import './SearchBar.css'
 const SearchBar = () => {
   return (
@@ -13,8 +15,17 @@ const SearchBar = () => {
         fullWidth
         id="search"
         placeholder="Search"
+
+        // InputProps={{
+        //   endAdornment: (
+        //     <InputAdornment position="end">
+        //        <SearchOutlined />
+        //     </InputAdornment>
+        //    ),
+        //   }}
       />
     </Box>
+  
   )
 }
 
