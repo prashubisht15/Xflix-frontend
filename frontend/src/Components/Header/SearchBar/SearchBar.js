@@ -18,7 +18,7 @@ const SearchBar = () => {
 
         // InputProps={{
         //   endAdornment: (
-        //     <InputAdornment position="end">
+        //     <InputAdornment position="start">
         //        <SearchOutlined />
         //     </InputAdornment>
         //    ),
