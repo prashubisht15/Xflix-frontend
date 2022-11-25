@@ -30,14 +30,34 @@ const Home = () => {
     const [content, setContent] = useState("Anyone")
 
     const { enqueueSnackbar } = useSnackbar();
+    const [search,setSearch]=useState("")
+    const [sortParameter, setSortParameter] = useState('Release Date');
 
+    const sortApiCall = async()=>{
+        let URL = endpoint + `?sortBy=${sortParameter}`
+        try{
+            const response = await axios.get(URL);
+            const videos = response.data.videos;
+            setVideoList(videos)
+            return videos
+        }
+        catch (e) {
+            if (e.response) {
+                enqueueSnackbar(e.respose.message, { variant: "error" })
+            } else {
+                enqueueSnackbar("something went wrong. Check that backend is running",
+                    { variant: "error" })
+            }
+        }
+        return [];
+    }
     const performAPICall = async () => {
         let URL = ""
         if (content === "Anyone") {
             URL = endpoint + `?genres=${genres.join(",")}`
         }
         else {
-            URL = endpoint + `?title=top&genres=${genres.join(",")}&contentRating=${content}%2B`
+            URL = endpoint + `?title=${search}&genres=${genres.join(",")}&contentRating=${content}%2B`
         }
         try {
             const response = await axios.get(URL);
@@ -54,6 +74,14 @@ const Home = () => {
             }
         }
         return [];
+    }
+    const handleSearch = (ele)=>{  
+        console.log(ele)
+        setSearch(ele)
+    }
+    
+    const handleSort =(ele)=>{
+        setSortParameter(ele)
     }
 
     const handleGenreChange = (genre) => {
@@ -85,7 +113,11 @@ const Home = () => {
 
     useEffect(() => {
         performAPICall();
-    }, [genres, content])
+    }, [genres, content, search])
+
+    useEffect(() => {
+        sortApiCall();
+    }, [sortParameter])
 
     return (
 
@@ -99,6 +131,8 @@ const Home = () => {
                 selectedGenres={genres}
                 selectedContent={content}
                 refresh={performAPICall}
+                handleSearch={handleSearch}
+                handleSort={handleSort}
             />
         </div>
     )

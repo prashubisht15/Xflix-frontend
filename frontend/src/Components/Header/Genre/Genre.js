@@ -1,9 +1,8 @@
-import React from 'react'
+import React,{useState} from 'react'
 import { Box} from '@mui/material'
-import Button from '@mui/material/Button';
 import './Genre.css'
 
-function Genre({allGenres, selectedGenres, handleGenreChange}) {
+function Genre({allGenres, selectedGenres, handleGenreChange, handleSort}) {
    
     return (
     
@@ -19,7 +18,15 @@ function Genre({allGenres, selectedGenres, handleGenreChange}) {
                         </li>)
                     }
                 </ul>
-                <Button variant='contained' className='sort-btn'>Contained</Button>
+                <select 
+                    onChange={e => {
+                        handleSort(e.target.value); 
+                    }}
+                    className="sort-select"
+                >
+                    <option className="select-options" id="release-date-option" value="releaseDate">Release Date</option>
+                    <option className="select-options" id="view-count-option" value="viewCount">View Count</option>
+                </select>
             </Box>
     )
 }

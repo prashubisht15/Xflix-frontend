@@ -90,7 +90,7 @@ const VideoPage = (props) => {
                 <div> Loading...</div>
             )
             }
-            <Link to={`/video/${params._id}`}>link</Link>
+            {/* <Link to={`/video/${params._id}`}>link</Link> */}
             <Grid item xs={12}>
                 <Explore videoList={allVideos}/>
             </Grid>

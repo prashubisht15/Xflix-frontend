@@ -11,3 +11,11 @@
     padding: 10px 10px;
     font-size: 17px;
 }                
+.btn{
+    border-radius: 5px;
+    font-size: 17px;
+    padding: 2px;
+}
+.searchBox{
+    display: inline-flex;
+}
